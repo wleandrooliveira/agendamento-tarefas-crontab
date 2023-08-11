@@ -1,0 +1,2 @@
+*/15 * * * * root /usr/bin/curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer SEU_TOKEN_AQUI" http://sua-api-endpoint-url >> /var/log/cron.log 2>&1
+

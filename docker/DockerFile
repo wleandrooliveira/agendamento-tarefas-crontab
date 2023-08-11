@@ -1,0 +1,16 @@
+FROM debian:bullseye-slim
+
+# Instale o curl e o cron
+RUN apt-get update && apt-get install -y curl cron
+
+# Adicione o arquivo cron
+COPY ./crontab/file /etc/cron.d/file
+
+# Dê permissão de execução
+RUN chmod 0644 /etc/cron.d/file
+
+# Crie o log (opcional)
+RUN touch /var/log/cron.log
+
+# Comando para executar o cron em primeiro plano
+CMD cron && tail -f /var/log/cron.log

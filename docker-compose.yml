@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  crojob:
+    build:
+      context: ./docker
+      dockerfile: /DockerFile
+    restart: unless-stopped
